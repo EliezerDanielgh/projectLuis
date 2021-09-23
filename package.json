@@ -1,0 +1,34 @@
+{
+  "name": "backend_assignment_listing_app",
+  "version": "1.0.0",
+  "description": "backend de listado de ordenes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xordex28/backend_assignment_listing_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xordex28/backend_assignment_listing_app/issues"
+  },
+  "homepage": "https://github.com/xordex28/backend_assignment_listing_app#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.9",
+    "mongoose": "^5.13.0",
+    "qrcode": "^1.4.4",
+    "rand-token": "^1.0.1",
+    "rootpath": "^0.1.2",
+    "swagger-ui-express": "^4.1.6"
+  }
+}

@@ -1,0 +1,1127 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "This is Documentation from the project assignment list application",
+      "version": "1.0.0",
+      "title": "Assignment List",
+      "contact": {
+        "email": "luis.gustavo.282000@gmail.com"
+      },
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      }
+    },
+    "host": "localhost:4000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Categories",
+        "description": "Enpoint Dedicated to Categories"
+      },
+      {
+        "name": "Clients",
+        "description": "Enpoint Dedicated to Clients"
+      },
+      {
+        "name": "Users",
+        "description": "Enpoint Dedicated to Users"
+      },
+      {
+        "name": "Tasks",
+        "description": "Enpoint Dedicated to Tasks"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/categories": {  
+        "get": {
+          "tags": [
+            "Categories"
+          ],
+          "summary": "Find Categories",
+          "description": "Get All Categories",
+          "operationId": "categories",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Category"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid status value"
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Categories"
+          ],
+          "summary": "Add new Category",
+          "description": "",
+          "operationId": "addCategory",
+          "consumes": [
+            "application/json",
+            "application/xml"
+          ],
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Category used from the insertion project",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Category"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/categories/{id}": {
+        "get": {
+          "tags": [
+            "Categories"
+          ],
+          "summary": "Find Categories by ID",
+          "description": "Get Category By ID",
+          "operationId": "getCategoryById",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from Category",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Category"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid ID supplied"
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "Categories"
+          ],
+          "summary": "Update Category",
+          "description": "",
+          "operationId": "updateCategory",
+          "consumes": [
+            "application/json",
+            "application/xml"
+          ],
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from Category",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Category used from the insertion project",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Category"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Categories"
+          ],
+          "summary": "Delete Categories by ID",
+          "description": "Delete Category By ID",
+          "operationId": "deleteCategoryById",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from Category",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Category"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid ID supplied"
+            }
+          }
+        }
+      },
+      "/clients": {
+        "get": {
+          "tags": [
+            "Clients"
+          ],
+          "summary": "Find Clients",
+          "description": "Get All Clients",
+          "operationId": "clients",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Client"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid status value"
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Clients"
+          ],
+          "summary": "Add new Client",
+          "description": "",
+          "operationId": "addClient",
+          "consumes": [
+            "application/json",
+            "application/xml"
+          ],
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Client used from the insertion project",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Client"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/clients/{id}": {
+        "get": {
+          "tags": [
+            "Clients"
+          ],
+          "summary": "Find Client by ID",
+          "description": "Get Client By ID",
+          "operationId": "getClientById",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from Client",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Client"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid ID supplied"
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "Clients"
+          ],
+          "summary": "Update Client",
+          "description": "",
+          "operationId": "updateClient",
+          "consumes": [
+            "application/json",
+            "application/xml"
+          ],
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from Client",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Client used from the insertion project",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Client"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Clients"
+          ],
+          "summary": "Delete Client by ID",
+          "description": "Delete Client By ID",
+          "operationId": "deleteClientById",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from Client",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Client"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid ID supplied"
+            }
+          }
+        }
+      },
+      "/users/roles": {
+        "get": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Find Roles",
+          "description": "Get All Roles",
+          "operationId": "roles",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Role"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid status value"
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Add new role",
+          "description": "",
+          "operationId": "addRole",
+          "consumes": [
+            "application/json",
+            "application/xml"
+          ],
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Role used from the insertion project",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Role"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/users/roles/{id}": {
+        "get": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Find Role by ID",
+          "description": "Get Role By ID",
+          "operationId": "getRoleById",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from Role",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Role"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid ID supplied"
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Update Role",
+          "description": "",
+          "operationId": "updateRole",
+          "consumes": [
+            "application/json",
+            "application/xml"
+          ],
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from Role",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Role used from the insertion project",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Role"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Delete Role by ID",
+          "description": "Delete Role By ID",
+          "operationId": "deleteRoleById",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from Role",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Role"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid ID supplied"
+            }
+          }
+        }
+      },
+      "/users/roles/{id}/canApproven": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Approve In Role",
+          "description": "",
+          "operationId": "approve",
+          "consumes": [
+            "application/json",
+            "application/xml"
+          ],
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from Role",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Role used from the assing project",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/PermitAproved"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/users/users": {
+        "get": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Find Users",
+          "description": "Get All Users",
+          "operationId": "users",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/User"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid status value"
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Add new User",
+          "description": "",
+          "operationId": "addUser",
+          "consumes": [
+            "application/json",
+            "application/xml"
+          ],
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "User used from the insertion project",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/users/users/{id}": {
+        "get": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Find User by ID",
+          "description": "Get User By ID",
+          "operationId": "getUserById",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from User",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/User"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid ID supplied"
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Update User",
+          "description": "",
+          "operationId": "updateUser",
+          "consumes": [
+            "application/json",
+            "application/xml"
+          ],
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from User",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "description": "User used from the insertion project",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Delete User by ID",
+          "description": "Delete User By ID",
+          "operationId": "deleteUserById",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from User",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/User"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid ID supplied"
+            }
+          }
+        }
+      },
+      "/users/users/{id}/canApproven": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Approve In User",
+          "description": "",
+          "operationId": "approve in user",
+          "consumes": [
+            "application/json",
+            "application/xml"
+          ],
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from User",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "description": "User used from the assing project",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/PermitAproved"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/tasks": {
+        "get": {
+          "tags": [
+            "Tasks"
+          ],
+          "summary": "Find Tasks",
+          "description": "Get All Tasks",
+          "operationId": "tasks",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Task"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid status value"
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Tasks"
+          ],
+          "summary": "Add new Tasks",
+          "description": "",
+          "operationId": "addTasks",
+          "consumes": [
+            "application/json",
+            "application/xml"
+          ],
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Tasks used from the insertion project",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Task"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/tasks/{id}": {
+        "get": {
+          "tags": [
+            "Tasks"
+          ],
+          "summary": "Find Tasks by ID",
+          "description": "Get Tasks By ID",
+          "operationId": "getTaskById",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from Tasks",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Task"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid ID supplied"
+            }
+          }
+        }
+      },
+      "/tasks/approved/{id}": {
+        "post": {
+          "tags": [
+            "Tasks"
+          ],
+          "summary": "Approved Task",
+          "description": "Approved Tasks",
+          "operationId": "tasks approved",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from Task",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Task"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid status value"
+            }
+          }
+        }
+      },
+      "/tasks/reject/{id}": {
+        "post": {
+          "tags": [
+            "Tasks"
+          ],
+          "summary": "Reject Task",
+          "description": "Reject Tasks",
+          "operationId": "tasks reject",
+          "produces": [
+            "application/xml",
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID from Task",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Task"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid status value"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Category": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean",
+            "default": true
+          }
+        },
+        "xml": {
+          "name": "Category"
+        }
+      },
+      "Client": {
+        "type": "object",
+        "properties": {
+          "document": {
+            "type": "string"
+          },
+          "shortName": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Role": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "canApprove": {
+            "type": "boolean",
+            "default": "false"
+          },
+          "canSuper": {
+            "type": "boolean",
+            "default": false
+          },
+          "active": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      },
+      "PermitAproved": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "client": {
+              "type": "string"
+            },
+            "categories": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "category": {
+                    "type": "string"
+                  },
+                  "canApprove": {
+                    "type": "boolean",
+                    "default": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Task": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "externalDocs": {
+      "description": "Find out more about Swagger",
+      "url": "http://swagger.io"
+    }
+  }

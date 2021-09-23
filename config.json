@@ -1,0 +1,5 @@
+{
+    "connectionString": "mongodb://127.0.0.1:27017/validationOrderDB",
+    "secret": "Key-Secret THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING",
+    "domain":"http://192.168.1.111:4000"
+}
